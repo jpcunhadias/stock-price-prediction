@@ -1,0 +1,25 @@
+# Core dependencies
+kedro~=0.19.11
+kedro-datasets
+yfinance
+pandas
+numpy
+scikit-learn
+tensorflow
+
+# API dependencies
+fastapi
+uvicorn[standard]
+boto3
+pydantic
+
+# Development tools (optional, remove if not needed in production)
+ipython>=8.10
+jupyterlab>=3.0
+notebook
+pytest
+pytest-cov
+pytest-mock
+ruff
+black
+mypy

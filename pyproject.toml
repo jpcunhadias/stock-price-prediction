@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.9"
+name = "stock_price_prediction"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []  # Dependencies are handled via requirements.txt
+
+[project.scripts]
+stock-price-prediction = "stock_price_prediction.__main__:main"
+
+[tool.kedro]
+package_name = "stock_price_prediction"
+project_name = "stock_price_prediction"
+kedro_init_version = "0.19.11"
+tools = "['Linting', 'Testing', 'Data Structure']"
+example_pipeline = "False"
+source_dir = "src"
+
+[tool.ruff]
+line-length = 88
+show-fixes = true
+lint.select = ["F", "W", "E", "I", "UP", "PL", "T201"]
+lint.ignore = ["E501"]
+
+
+[tool.pytest.ini_options]
+addopts = "--cov-report term-missing --cov src/stock_price_prediction -ra"
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.setuptools.dynamic.version]
+attr = "stock_price_prediction.__version__"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.kedro_telemetry]
+project_id = "a7490d842eaf4c619c3308182e080ee4"

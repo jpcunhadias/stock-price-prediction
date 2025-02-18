@@ -1,0 +1,18 @@
+# This is a boilerplate parameters config generated for pipeline 'model_training'
+# using Kedro 0.19.11.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.11/configuration/parameters.html
+
+test_size: 0.2
+model_training:
+  lstm_units: 50
+  batch_size: 32
+  epochs: 10
+  learning_rate: 0.001
+  early_stopping:
+    monitor: val_loss
+    patience: 5
+    restore_best_weights: true
+  s3_bucket: "data"
+  model_key: "06_models/lstm_model.h5"

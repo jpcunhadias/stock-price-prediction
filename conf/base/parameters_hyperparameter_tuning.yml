@@ -1,0 +1,16 @@
+# This is a boilerplate parameters config generated for pipeline 'hyperparameter_tuning'
+# using Kedro 0.19.11.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.11/configuration/parameters.html
+
+hyperparameter_search:
+  lstm_units: [32, 64, 128]
+  batch_size: [16, 32, 64]
+  epochs: [10, 20, 50]
+  learning_rate: [0.001, 0.0005, 0.0001]
+  dropout_rate: [0.2, 0.3, 0.5]
+
+  model_path: "data/06_models/lstm_model.keras"
+  s3_bucket: "stock-prediction-bucket"
+  model_key: "06_models/lstm_model.keras"

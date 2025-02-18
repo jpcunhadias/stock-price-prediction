@@ -1,0 +1,72 @@
+stock_prices:
+  type: pandas.CSVDataset
+  filepath: s3://stock-prediction-tech-challenge/data/01_raw/stock_prices.csv
+  credentials: dev_s3
+  
+
+stock_prices_no_first_row:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/stock_prices_no_first_row.csv
+  
+
+train_df:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/train_df.csv
+
+val_df:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/val_df.csv
+
+
+train_scaled_df:
+  type: pandas.CSVDataset
+  filepath: s3://stock-prediction-tech-challenge/data/02_intermediate/train_scaled.csv
+  save_args:
+    index: false
+  credentials: dev_s3
+
+val_scaled_df:
+  type: pandas.CSVDataset
+  filepath: s3://stock-prediction-tech-challenge/data/02_intermediate/val_scaled.csv
+  save_args:
+    index: false
+  credentials: dev_s3
+
+scaler:
+  type: pickle.PickleDataset
+  filepath: s3://stock-prediction-tech-challenge/data/06_models/scaler.pkl
+  credentials: dev_s3
+
+X_train:
+  type: pickle.PickleDataset
+  filepath: s3://stock-prediction-tech-challenge/data/05_model_input/X_train.pkl
+  credentials: dev_s3
+
+y_train:
+  type: pickle.PickleDataset
+  filepath: s3://stock-prediction-tech-challenge/data/05_model_input/y_train.pkl
+  credentials: dev_s3
+
+X_val:
+  type: pickle.PickleDataset
+  filepath: s3://stock-prediction-tech-challenge/data/05_model_input/X_val.pkl
+  
+
+y_val:
+  type: pickle.PickleDataset
+  filepath: s3://stock-prediction-tech-challenge/data/05_model_input/y_val.pkl
+  credentials: dev_s3
+
+best_hyperparameters:
+  type: json.JSONDataset
+  filepath: s3://stock-prediction-tech-challenge/data/08_reporting/best_hyperparameters.json
+  credentials: dev_s3
+
+best_metrics:
+  type: json.JSONDataset
+  filepath: s3://stock-prediction-tech-challenge/data/08_reporting/best_metrics.json
+  credentials: dev_s3
+
+lstm_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/lstm_model.pkl
