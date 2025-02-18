@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
-from .schemas import PredictionRequest
-from .model_loader import predict_price, get_last_60_days_prices
+from schemas import PredictionRequest
+from model_loader import predict_price, get_last_60_days_prices
 
 app = FastAPI(
     title="Stock Price Prediction API",

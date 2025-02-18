@@ -7,7 +7,7 @@ import pandas as pd
 import tensorflow as tf
 import yfinance as yf
 
-from .config import bucket_name, MODEL_PATH, SCALER_PATH, local_scaler_path, local_model_path
+from config import bucket_name, MODEL_PATH, SCALER_PATH, local_scaler_path, local_model_path
 
 TRAINED_SYMBOL = "PETR4.SA"
 
